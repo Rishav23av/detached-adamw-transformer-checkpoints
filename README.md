@@ -13,6 +13,7 @@ The data represents a checkpoint-recovery problem. It is intended for training a
 - `manifest.json`: dataset version, deterministic generator seed, total case count, and provenance flags.
 - `cases.jsonl`: one complete checkpoint-recovery record per line.
 - `labels.csv`: the correct one-to-one slot-to-bundle ownership mapping for every raw case.
+- `AUDIT_REPORT.json`: measured integrity statistics and shortcut-baseline results for the completed build.
 - `archives/`: compressed NumPy archives containing model parameters, attached optimizer state, anonymous candidate bundles, and canary token batches.
 - `public_model.py`: PyTorch implementation of the transformer architecture and archive loader.
 - `README.md`: short dataset guide.
@@ -85,7 +86,7 @@ Each case's labels form a complete bijection: every slot occurs once and every c
 
 ## Source And License
 
-This is an original procedurally generated dataset created for the Optimizer State Reattachment benchmark. The included generator trains every model and records genuine AdamW moment tensors. No external dataset or model weights are redistributed.
+This is an original procedurally generated dataset created for the Optimizer State Reattachment benchmark. The dataset-generation process trained every model and recorded genuine AdamW moment tensors. No external dataset or model weights are redistributed.
 
 The dataset is released under the Creative Commons Attribution 4.0 International license.
 
