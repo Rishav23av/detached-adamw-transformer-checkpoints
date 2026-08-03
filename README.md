@@ -70,20 +70,10 @@ Within a case, every detached parameter and every anonymous bundle has exactly t
 
 Each case's labels form a complete bijection: every slot occurs once and every candidate bundle is used once.
 
-### Prepared challenge files
-
-The preparation pipeline converts the raw records into these public tables:
-
-- `train.csv`: 243 rows with `case_id` (`string`) and `mapping_json` (`JSON string`) containing complete training mappings.
-- `test.csv`: 77 rows with `case_id` (`string`) for every hidden-label test case.
-- `sample_submission.csv`: 77 rows with `case_id` (`string`) and `mapping_json` (`JSON string`) in the required submission format.
-- `train_cases.jsonl`: 243 public case records for labeled training cases.
-- `test_cases.jsonl`: 77 public case records for hidden-label test cases.
-
 ## Data Characteristics
 
 - 320 independently initialized and trained checkpoints.
-- 243 training cases and 77 hidden-label test cases.
+- The `split` field in `cases.jsonl` marks 243 records as `train` and 77 records as `test` for later challenge preparation.
 - Five transformer architecture configurations with 12, 14, 16, 18, or 20 layers.
 - Candidate groups contain 12 to 20 same-role, same-shaped attention parameters.
 - AdamW learning rate, beta values, epsilon, weight decay, training horizon, token grammar, vocabulary permutation, and candidate order vary by case.
